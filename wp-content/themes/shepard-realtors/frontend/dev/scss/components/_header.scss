@@ -1,0 +1,263 @@
+.shepard-realtors-header {
+    padding: 7px 0;
+    background-color: $support-color-light-blue-ballerina;
+    @media screen and (min-width: 1366px) {
+        padding: 0;
+    }
+    & .container {
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: 1366px) {
+            flex-direction: row;
+        }
+    }
+    &__logo-container,
+    &__nav-container {
+        width: 100%;
+    }
+    &__logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (min-width: 1366px) {
+            width: 20%;
+        }
+    }
+    &__nav-container {
+        @media screen and (min-width: 1366px) {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__logo-link {
+        display: none;
+        @media screen and (min-width: 1366px) {
+            display: block;
+        }
+    }
+    &__cta-link {
+    	font-family: Raleway-Regular;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+        letter-spacing: 0.15px;
+        color: $primary-color-imperial-primer;
+        text-decoration: none;
+        @media screen and (min-width: 1366px) {
+            display: none;
+        }
+        & h6 {
+            margin: 0;
+        }
+    }
+    &__cta-link--desktop {
+        display: none;
+        @media screen and (min-width: 1366px) {
+            display: block;
+            margin-left: 2rem;
+        }
+        & h6 {
+            @media screen and (min-width: 1366px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &__cta-number {
+        color: $primary-color-pico-pink;
+        border: 2px solid $primary-color-pico-pink;
+        border-radius: 4px;
+        padding: 0.4em 1.4em;
+    	font-family: Lato-Regular;
+        font-size: 14px;
+        margin-left: 4px;
+        @media screen and (min-width: 1024px) {
+            min-width: 146px;
+            max-width: 146px;
+            min-height: 32px;
+            max-height: 32px;
+        }
+        @media screen and (min-width: 1366px) {
+            margin-top: 5px;
+            margin-left: 0;
+            line-height: 14px;
+        }
+    }
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+        height: 0; // Set to 0 for responsive menu
+        overflow: hidden;
+        transition: height ease-in-out 0.3s;
+        @media screen and (min-width: 1366px) {
+            height: 100%;   
+            flex-grow: 1;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: initial;
+        }
+        &.show {
+            padding: 10px 0;
+            height: auto;
+        }
+        & li {
+            width: 100%;
+            display: block;
+            list-style: none;
+            @media screen and (min-width: 1366px) {
+                width: auto;
+                height: 100%;
+                padding: 0 1rem 0 1rem;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            &.menu-item-has-children {
+                cursor: pointer;
+                background: {
+                    image: url(images/icons/down-arrow-black.svg);
+                    repeat: no-repeat;
+                    size: 12px 7px;
+                    position: right .75rem top 1rem;
+                };
+                @media screen and (min-width: 1366px) {
+                    background-position: right .75rem top 3.7rem;
+                    padding: 0 2rem 0 1rem;
+                }
+                & a {
+                    width: 50%;
+                    @media screen and (min-width: 1366px) {
+                        width: 100%;
+                    }
+                }
+                & ul.sub-menu a {
+                    width: 100%;
+                }
+                &.show {
+                    background-image: url(images/icons/up-arrow-black.svg);
+                    @media screen and (min-width: 1366px) {
+                        background-image: url(images/icons/up-arrow-white.svg);
+                        background-color: $primary-color-pico-pink;
+                    }
+                }
+                &.show a {
+                    @media screen and (min-width: 1366px) {
+                        color: $support-color-pure-white;
+                    }
+                }
+            }
+            & ul.sub-menu {
+                margin-left: 0; 
+                padding-bottom: 0; // set to 0 for responsive dropdown
+                padding-left: 0; // set to 0 for responsive dropdown
+                height: 0; // set to 0 for responsive dropdown
+                overflow: hidden;
+                transition: height ease-in-out 0.3s;
+                border-top: 1px solid transparent;
+                @media screen and (min-width: 1366px) {
+                    border-top: none;
+                    padding-bottom: 0;
+                    padding-left: 0;
+                    height: 0;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    z-index: 1000;
+                    background-color: $support-color-pure-white;
+                    border-radius: 4px;
+                    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.14);
+                    min-width: 18rem;
+                }
+                &.show {
+                    border-top: 1px solid $support-color-silver;
+                    padding-bottom: 10px;
+                    padding-left: 24px;
+                    height: auto;
+                    @media screen and (min-width: 1366px) {
+                        border-top: none;
+                        padding-bottom: 0;
+                        padding-left: 0;
+                    }
+                    & li a {
+                        color: $primary-color-imperial-primer;
+                    }
+                }
+                & li {
+                    @media screen and (min-width: 1366px) {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                & a {
+                    border-bottom: none;
+                    &:hover {
+                         @media screen and (min-width: 1366px) {
+                             background-color: $support-color-light-blue-ballerina;
+                         }
+                    }
+                    &:focus {
+                        @media screen and (min-width: 1366px) {
+                            background-color: $support-color-silver;
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                   
+                    @media screen and (min-width: 1366px) {
+                        padding: 0.7rem 1rem;
+                    }
+                }
+            }
+            &:last-child a {
+                padding-bottom: 0;
+                @media screen and (min-width: 1366px) {
+                    display: table;
+                    margin: auto 0;
+                    padding: 3.5rem 0;
+                }
+            }
+            &.current-menu-item {
+                & a {
+                    color: $primary-color-pico-pink;
+                }
+                & ul.sub-menu li a {
+                    color: $primary-color-imperial-primer;
+                }
+            }
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus {
+                border: none;
+                outline: none;
+            }
+        }
+        & a {
+            width: 100%;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+        	font-family: Raleway-SemiBold;
+            color: $primary-color-imperial-primer;
+            font-size: 14px;
+            line-height: 14px;
+            letter-spacing: 1.25px;
+            padding: 14px 0;
+            @media screen and (min-width: 1366px) {
+                display: table;
+                margin: auto 0;
+                padding: 3.5rem 0;
+            }
+        }
+    }
+}

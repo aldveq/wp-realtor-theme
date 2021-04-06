@@ -1,0 +1,19 @@
+.site-footer {
+    background-color: $primary-color-imperial-primer;
+    & .container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    & h6 {
+        color: $support-color-pure-white;
+        font-size: 12px;
+    	font-family: Lato-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 175%;
+        letter-spacing: 0.4px;
+        text-align: center;
+    }
+}

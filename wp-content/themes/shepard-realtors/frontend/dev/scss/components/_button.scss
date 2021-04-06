@@ -1,0 +1,219 @@
+.button {
+    padding: 1em;
+    cursor: pointer;
+    border: 2px solid $support-color-silver;
+    background-color: $support-color-pure-white;
+    border-radius: 4px;
+    font-family: Raleway-SemiBold;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+    transition: background ease-in-out 0.1s;
+    &__outline-hamburguer {
+        width: 48px;
+        height: 48px;
+        background: {
+            image: url('images/icons/hamburguer.svg');
+            repeat: no-repeat;
+            size: 18px;
+            position: center;
+        };
+        &:hover {
+            border: 2px solid $primary-color-pico-pink;
+            background-color: $primary-color-pico-pink;
+            background-image: url('images/icons/hamburguer-white.svg');
+        }
+        &:active,
+        &:visited,
+        &:focus {
+            border: 2px solid $primary-color-pico-pink-pressed;
+            outline: none; 
+            background-color: $primary-color-pico-pink-pressed;
+            background-image: url('images/icons/hamburguer-white.svg');
+        }
+        &.disabled {
+            background-image: url('images/icons/hamburguer-disabled.svg');
+            cursor: not-allowed;
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus {
+                border: 2px solid $support-color-silver;
+                background-color: $support-color-pure-white;
+                background-image: url('images/icons/hamburguer-disabled.svg');
+            }
+        }
+    }
+    &__hamburguer {
+        width: 36px;
+        height: 36px;
+        border: none;
+        background-color: transparent;
+        background: {
+            image: url('images/icons/hamburguer-menu-icon.svg');
+            repeat: no-repeat;
+            size: 20px;
+            position: center;
+        };
+        @media screen and (min-width: 1366px) {
+            display: none;
+        }
+        &.show {
+            background-image: url('images/icons/close-menu-icon.svg');
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+    &__outline {
+        padding: 1em 6em;
+        border: 2px solid $primary-color-pico-pink;
+        color: $primary-color-pico-pink;
+        min-width: 252px;
+        max-width: 252px;
+        min-height: 48px;
+        max-height: 48px;
+        &:hover {
+            border: 2px solid $primary-color-pico-pink;
+            background-color: $primary-color-pico-pink;
+            color: $support-color-pure-white;
+        }
+        &:active,
+        &:visited,
+        &:focus {
+            outline: none; 
+            color: $support-color-pure-white; 
+            border: 2px solid $primary-color-pico-pink-pressed;
+            background-color: $primary-color-pico-pink-pressed;
+        }
+        &.disabled {
+            cursor: not-allowed;
+            border: 2px solid  $support-color-silver;
+            color:  $support-color-silver;
+            background-color: $support-color-pure-white;
+            &:hover,
+            &:active,
+            &:visited,
+            &:focus {
+                background-color: $support-color-pure-white;
+                border: 2px solid  $support-color-silver;
+                color:  $support-color-silver;
+            }
+        }
+    } 
+    &__outline--small {
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.25px;
+        padding: 1em 2.5em;
+        min-width: 163px;
+        min-height: 36px;
+        max-height: 36px;
+    }
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & span {
+            display: block;
+            margin-left: 6px;
+            background: {
+                repeat: no-repeat;
+                size: 100%;
+                position: center;
+            };           
+        }
+        &:hover span,
+        &:active span,
+        &:visited span,
+        &:focus span {
+            color: $support-color-pure-white;
+        }
+    }
+    &__outline--right-arrow {
+        & span {
+            width: 20px;
+            height: 14px;
+            background-image: url('images/icons/right-arrow.svg');
+        }
+        &:hover span,
+        &:active span,
+        &:visited span,
+        &:focus span {
+            background-image: url('images/icons/right-arrow-white.svg');
+        }
+        &.disabled span {
+            background-image: url('images/icons/right-arrow-disabled.svg');
+        }
+    }
+    &__filled {
+        padding: 1em 6em;
+        color: $support-color-pure-white;
+        background-color: $primary-color-pico-pink;
+        border: 2px solid $primary-color-pico-pink;
+        min-width: 330px;
+        max-width: 330px;
+        min-height: 48px;
+        max-height: 48px;
+        @media screen and (max-width: 576px) {
+            min-width: 252px;
+            max-width: 252px;
+        }
+        &:hover {
+            background-color: $primary-color-pico-pink-hover;
+            border: 2px solid $primary-color-pico-pink-hover;
+        }
+        &:active,
+        &:visited,
+        &:focus {
+            outline: none; 
+            color: $support-color-pure-white; 
+            border: 2px solid $primary-color-pico-pink-pressed;
+            background-color: $primary-color-pico-pink-pressed;
+        }
+        &.disabled {
+            cursor: not-allowed;
+            border: 2px solid $support-color-silver;
+            background-color: $support-color-silver;
+            color: $primary-color-concrete;
+        }
+    }
+    &__filled--search {
+        & span {
+            width: 16px;
+            height: 16px;
+            background-image: url('images/icons/search.svg');
+        }
+        &.disabled span {
+            background-image: url('images/icons/search-disabled.svg');
+        }
+    }  
+    &__text {
+        padding: 0.6em 0.4em;
+        background-color: $support-color-pure-white;
+        border: 2px solid transparent;
+        color: $primary-color-pico-pink;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        &:hover {
+            background-color: $primary-color-pico-pink-hover;
+            color: $support-color-pure-white;
+            border: 2px solid $primary-color-pico-pink-hover;
+        }
+        &:active,
+        &:visited,
+        &:focus {
+            background-color: $primary-color-pico-pink-pressed;
+            border: 2px solid $primary-color-pico-pink-pressed;
+            color: $support-color-pure-white;
+            outline: none;
+        }
+    }   
+    &__text--grey {
+        color: $primary-color-concrete;
+    }
+}
