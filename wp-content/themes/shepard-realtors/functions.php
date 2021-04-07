@@ -100,6 +100,51 @@ if ( ! function_exists( 'shepard_realtors_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_theme_support('wp-block-styles');
+
+		add_theme_support('editor-color-palette', array(
+			array(
+				'name' => 'Pico Pink',
+				'slug' => 'pico-pink',
+				'color' => '#F44E65'
+			),
+			array(
+				'name' => 'Imperial Primer',
+				'slug' => 'imperial-primer',
+				'color' => '#210B2C'
+			),
+			array(
+				'name' => 'Concrete',
+				'slug' => 'concrete',
+				'color' => '#AAADC3'
+			),
+			array(
+				'name' => 'Silver',
+				'slug' => 'silver',
+				'color' => '#E9E9EC'
+			),
+			array(
+				'name' => 'Light Blue Ballerina',
+				'slug' => 'light-blue-ballerina',
+				'color' => '#F7F9FF'
+			),
+			array(
+				'name' => 'Pure White',
+				'slug' => 'pure-white',
+				'color' => '#FFFFFF'
+			),
+			array(
+				'name' => 'Asbestos',
+				'slug' => 'asbestos',
+				'color' => '#929292'
+			),
+			array(
+				'name' => 'Tomato Red',
+				'slug' => 'tomato-red',
+				'color' => '#FF0000'
+			),
+		));
 	}
 endif;
 add_action( 'after_setup_theme', 'shepard_realtors_setup' );

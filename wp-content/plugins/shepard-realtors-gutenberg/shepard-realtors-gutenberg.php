@@ -55,9 +55,9 @@ function shepard_realtors_blocks() {
     // Registration of the frontend & backend styles (same css file applied for both frontend & backend)
     wp_register_style(
         'shepard-realtors-frontend-backend-styles',
-        plugins_url('build/styles.css', __FILE__ ),
+        plugins_url('build/index.css', __FILE__ ),
         array(),
-        filemtime(plugin_dir_path(__FILE__) . 'build/styles.css')
+        filemtime(plugin_dir_path(__FILE__) . 'build/index.css')
     );  
 
     // Registration of each block with register_block_type function

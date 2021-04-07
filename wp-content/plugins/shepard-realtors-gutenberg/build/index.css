@@ -1,0 +1,91 @@
+@media screen and (min-width: 1366px) {
+  .brand-section {
+    display: none; } }
+
+.brand-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.brand-section h6 {
+  margin: 0;
+  font-family: Lato-Regular;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 1.25px;
+  color: #210B2C;
+  text-transform: uppercase; }
+
+@media screen and (min-width: 1024px) {
+  .hero-image-section {
+    min-height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
+    position: relative; } }
+
+@media screen and (min-width: 1366px) {
+  .hero-image-section {
+    min-height: 320px; } }
+
+@media screen and (min-width: 1024px) {
+  .hero-image-section::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(33, 11, 44, 0.48); } }
+
+.hero-image-section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  @media screen and (min-width: 1024px) {
+    .hero-image-section .container {
+      position: relative;
+      min-height: 250px; } }
+  @media screen and (min-width: 1366px) {
+    .hero-image-section .container {
+      min-height: 320px; } }
+
+.hero-image-section h5 {
+  font-family: Raleway-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 130%;
+  text-align: center;
+  color: #210B2C;
+  margin: 0; }
+  @media screen and (min-width: 1024px) {
+    .hero-image-section h5 {
+      font-size: 22px; } }
+
+.hero-image-section p {
+  font-family: Lato-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 175%;
+  text-align: center;
+  letter-spacing: 0.25px;
+  color: #AAADC3;
+  margin: 0; }
+  @media screen and (min-width: 1024px) {
+    .hero-image-section p {
+      font-size: 16px; } }
+
+@media screen and (min-width: 1024px) {
+  .hero-image-section h5,
+  .hero-image-section p {
+    color: #FFFFFF; } }
+
+
+/*# sourceMappingURL=index.css.map*/

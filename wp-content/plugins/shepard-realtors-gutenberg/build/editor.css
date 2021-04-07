@@ -1,0 +1,15 @@
+.wp-block {
+    max-width: 1380px;
+}
+
+.block-editor-writing-flow {
+    padding-left: 3rem;
+}
+
+/* Resetting some of the component styles in the editor */
+
+@media screen and (min-width: 1366px) {
+    .brand-section {
+        display: block;
+    }
+}
