@@ -5,7 +5,6 @@ $desktop-min-height: 320px;
     @media screen and (min-width: 1024px) {
         min-height: $tablet-min-height;
         background: {
-            // image: url('images/lakehouse.png');
             repeat: no-repeat;
             size: cover;
             position: center;
@@ -15,6 +14,9 @@ $desktop-min-height: 320px;
     }
     @media screen and (min-width: 1366px) {
         min-height: $desktop-min-height;
+    }
+    @media screen and (max-width: 1024px) {
+        background: none !important;
     }
     &::before {
         @media screen and (min-width: 1024px) {
@@ -41,20 +43,20 @@ $desktop-min-height: 320px;
         }
     }
     & h5 {
-    	font-family: Raleway-Regular;
+    	font-family: Raleway;
         font-style: normal;
         font-weight: normal;
         font-size: 26px;
         line-height: 130%;
         text-align: center;
         color: $primary-color-imperial-primer;
-        margin: 0;
+        margin: 0 !important;
         @media screen and (min-width: 1024px) {
             font-size: 22px;
         }
     }   
     & p {
-        font-family: Lato-Regular;
+        font-family: Lato;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -62,7 +64,7 @@ $desktop-min-height: 320px;
         text-align: center;
         letter-spacing: 0.25px;
         color: $primary-color-concrete;
-        margin: 0;
+        margin: 0 !important;
         @media screen and (min-width: 1024px) {
             font-size: 16px;
         }

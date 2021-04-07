@@ -13,7 +13,7 @@
 
 	<?php shepard_realtors_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content" style="margin-top: 0;">
 		<?php
 		the_content();
 

@@ -1,3 +1,12 @@
 // body {
 //     border: 20px dotted red;
 // }
+
+.upload-button-image {
+    background-color: $support-color-pure-white;
+    box-shadow: 0 4px 12px -6px $primary-color-imperial-primer;
+    margin-bottom: 1rem;
+    & span {
+        margin-right: 2px !important;
+    }
+}

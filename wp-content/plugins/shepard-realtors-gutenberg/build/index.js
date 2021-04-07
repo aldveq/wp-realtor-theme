@@ -97,14 +97,17 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities */ "./src/utilities/index.js");
 
 var registerBlockType = wp.blocks.registerBlockType;
 var _wp$blockEditor = wp.blockEditor,
     RichText = _wp$blockEditor.RichText,
     MediaUpload = _wp$blockEditor.MediaUpload;
 var Button = wp.components.Button;
+
 registerBlockType('shepard-realtors/brand', {
   title: 'Brand',
+  description: 'Shepard Realtors Brand Block',
   icon: 'superhero-alt',
   category: 'shepard-realtors',
   attributes: {
@@ -154,7 +157,7 @@ registerBlockType('shepard-realtors/brand', {
       render: function render(_ref) {
         var open = _ref.open;
         return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
-          className: "",
+          className: "upload-button-image",
           onClick: open,
           icon: "format-image",
           showTooltip: "true",
@@ -192,6 +195,123 @@ registerBlockType('shepard-realtors/brand', {
 
 /***/ }),
 
+/***/ "./src/components/hero/index.js":
+/*!**************************************!*\
+  !*** ./src/components/hero/index.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities */ "./src/utilities/index.js");
+
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    MediaUpload = _wp$blockEditor.MediaUpload;
+var Button = wp.components.Button;
+
+registerBlockType('shepard-realtors/hero', {
+  title: 'Hero',
+  description: 'Shepard Realtors Hero Image Block',
+  icon: 'format-image',
+  category: 'shepard-realtors',
+  attributes: {
+    heroImage: {
+      type: 'string',
+      selector: '.hero-image-section'
+    },
+    heroImageTitle: {
+      type: 'string',
+      source: 'html',
+      selector: '.hero-image-section h5'
+    },
+    heroImageDescription: {
+      type: 'string',
+      source: 'html',
+      selector: '.hero-image-section p'
+    }
+  },
+  edit: function edit(props) {
+    var _props$attributes = props.attributes,
+        heroImage = _props$attributes.heroImage,
+        heroImageTitle = _props$attributes.heroImageTitle,
+        heroImageDescription = _props$attributes.heroImageDescription,
+        setAttributes = props.setAttributes;
+
+    var getHeroImageTitle = function getHeroImageTitle(newTitle) {
+      setAttributes({
+        heroImageTitle: newTitle
+      });
+    };
+
+    var getHeroImageDescription = function getHeroImageDescription(newDescription) {
+      setAttributes({
+        heroImageDescription: newDescription
+      });
+    };
+
+    var selectHeroImage = function selectHeroImage(image) {
+      setAttributes({
+        heroImage: image.sizes.full.url
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+      class: "hero-image-section",
+      style: {
+        backgroundImage: "url(".concat(Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(heroImage), ")")
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "container container-separation-y"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
+      onSelect: selectHeroImage,
+      type: "image",
+      render: function render(_ref) {
+        var open = _ref.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
+          className: "upload-button-image",
+          onClick: open,
+          icon: "format-image",
+          showTooltip: "true",
+          label: "Change image"
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h5", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add your title",
+      onChange: getHeroImageTitle,
+      value: heroImageTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add your description",
+      onChange: getHeroImageDescription,
+      value: heroImageDescription
+    }))));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        heroImage = _props$attributes2.heroImage,
+        heroImageTitle = _props$attributes2.heroImageTitle,
+        heroImageDescription = _props$attributes2.heroImageDescription;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+      class: "hero-image-section",
+      style: {
+        backgroundImage: "url(".concat(Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(heroImage), ")")
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "container container-separation-y"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h5", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: heroImageTitle
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: heroImageDescription
+    }))));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -204,8 +324,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/styles.scss */ "./src/scss/styles.scss");
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_brand__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/brand */ "./src/components/brand/index.js");
+/* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/hero */ "./src/components/hero/index.js");
 // Styles
  // Components
+
 
 
 
@@ -219,6 +341,28 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/utilities/index.js":
+/*!********************************!*\
+  !*** ./src/utilities/index.js ***!
+  \********************************/
+/*! exports provided: setDefaultImage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setDefaultImage", function() { return setDefaultImage; });
+var setDefaultImage = function setDefaultImage(image) {
+  if (image !== undefined) {
+    return image;
+  } else {
+    return 'https://wallpapercave.com/wp/wp8179173.jpg';
+  }
+};
+
+
 
 /***/ }),
 

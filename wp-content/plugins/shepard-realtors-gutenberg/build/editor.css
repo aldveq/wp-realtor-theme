@@ -13,3 +13,7 @@
         display: block;
     }
 }
+
+.hero-image-section h5 {
+    color: #fff !important;
+}

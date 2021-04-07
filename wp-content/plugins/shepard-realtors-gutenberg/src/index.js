@@ -3,3 +3,4 @@ import './scss/styles.scss';
 
 // Components
 import './components/brand';
+import './components/hero';

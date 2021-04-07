@@ -1,9 +1,11 @@
 const { registerBlockType } = wp.blocks;
 const { RichText, MediaUpload } = wp.blockEditor;
 const { Button } = wp.components;
+import { setDefaultImage } from '../../utilities';
 
 registerBlockType('shepard-realtors/brand', {
     title: 'Brand', 
+    description: 'Shepard Realtors Brand Block', 
     icon: 'superhero-alt',
     category: 'shepard-realtors',
     attributes: {
@@ -41,7 +43,7 @@ registerBlockType('shepard-realtors/brand', {
                         type='image'
                         render={({open}) => (
                             <Button 
-                                className=""
+                                className="upload-button-image"
                                 onClick={open}
                                 icon="format-image"
                                 showTooltip="true"
