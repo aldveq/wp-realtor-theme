@@ -2,13 +2,14 @@
     padding: 1em;
     cursor: pointer;
     border: 2px solid $support-color-silver;
-    background-color: $support-color-pure-white;
+    background-color: transparent;
     border-radius: 4px;
     font-family: Raleway-SemiBold;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 0.25px;
     text-transform: uppercase;
+    text-decoration: none;
     transition: background ease-in-out 0.1s;
     &__outline-hamburguer {
         width: 48px;
@@ -69,18 +70,10 @@
         }
     }
     &__outline {
-        padding: 1em 6em;
+        width: 100%;
+        padding: 1em 4em;
         border: 2px solid $primary-color-pico-pink;
         color: $primary-color-pico-pink;
-        min-width: 252px;
-        max-width: 252px;
-        min-height: 48px;
-        max-height: 48px;
-        &:hover {
-            border: 2px solid $primary-color-pico-pink;
-            background-color: $primary-color-pico-pink;
-            color: $support-color-pure-white;
-        }
         &:active,
         &:visited,
         &:focus {
@@ -89,11 +82,12 @@
             border: 2px solid $primary-color-pico-pink-pressed;
             background-color: $primary-color-pico-pink-pressed;
         }
+        &:hover {
+            border: 2px solid $primary-color-pico-pink;
+            background-color: $primary-color-pico-pink;
+            color: $support-color-pure-white;
+        }
         &.disabled {
-            cursor: not-allowed;
-            border: 2px solid  $support-color-silver;
-            color:  $support-color-silver;
-            background-color: $support-color-pure-white;
             &:hover,
             &:active,
             &:visited,
@@ -102,6 +96,10 @@
                 border: 2px solid  $support-color-silver;
                 color:  $support-color-silver;
             }
+            cursor: not-allowed;
+            border: 2px solid  $support-color-silver;
+            color:  $support-color-silver;
+            background-color: $support-color-pure-white;
         }
     } 
     &__outline--small {

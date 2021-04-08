@@ -63,7 +63,8 @@ function shepard_realtors_blocks() {
     // Registration of each block with register_block_type function
     $shepard_realtors_blocks = [
         'shepard-realtors/brand',
-        'shepard-realtors/hero'
+        'shepard-realtors/hero',
+        'shepard-realtors/dream-houses'
     ];
 
     foreach($shepard_realtors_blocks as $sr_block) {

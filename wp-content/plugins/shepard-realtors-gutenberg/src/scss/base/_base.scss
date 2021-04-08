@@ -3,6 +3,12 @@
 // }
 
 .upload-button-image {
+    width: 36px;
+    height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+    display: table;
+    margin: 0 auto;
     background-color: $support-color-pure-white;
     box-shadow: 0 4px 12px -6px $primary-color-imperial-primer;
     margin-bottom: 1rem;

@@ -195,6 +195,457 @@ registerBlockType('shepard-realtors/brand', {
 
 /***/ }),
 
+/***/ "./src/components/dream-houses/index.js":
+/*!**********************************************!*\
+  !*** ./src/components/dream-houses/index.js ***!
+  \**********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities */ "./src/utilities/index.js");
+
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    MediaUpload = _wp$blockEditor.MediaUpload,
+    URLInputButton = _wp$blockEditor.URLInputButton,
+    InspectorControls = _wp$blockEditor.InspectorControls; // const LinkControl = __experimentalLinkControl;
+
+var _wp$components = wp.components,
+    Button = _wp$components.Button,
+    PanelBody = _wp$components.PanelBody;
+
+registerBlockType('shepard-realtors/dream-houses', {
+  title: 'Dream Houses',
+  description: 'Shepard Realtors Dream Houses Block',
+  icon: 'admin-multisite',
+  category: 'shepard-realtors',
+  attributes: {
+    dreamHouseDescriptionOne: {
+      type: 'string',
+      source: 'html',
+      selector: '#dreamHouseDescriptionOne'
+    },
+    dreamHouseDescriptionTwo: {
+      type: 'string',
+      source: 'html',
+      selector: '#dreamHouseDescriptionTwo'
+    },
+    dreamHouseDescriptionThree: {
+      type: 'string',
+      source: 'html',
+      selector: '#dreamHouseDescriptionThree'
+    },
+    dreamHouseImageOne: {
+      type: 'string',
+      selector: '#dreamHouseImageOne'
+    },
+    dreamHouseImageOneAltText: {
+      type: 'string',
+      selector: '#dreamHouseImageOne'
+    },
+    dreamHouseImageTwo: {
+      type: 'string',
+      selector: '#dreamHouseImageTwo'
+    },
+    dreamHouseImageTwoAltText: {
+      type: 'string',
+      selector: '#dreamHouseImageTwo'
+    },
+    dreamHouseImageThree: {
+      type: 'string',
+      selector: '#dreamHouseImageThree'
+    },
+    dreamHouseImageThreeAltText: {
+      type: 'string',
+      selector: '#dreamHouseImageThree'
+    },
+    dreamHouseLinkOne: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'href'
+    },
+    dreamHouseLinkTwo: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'href'
+    },
+    dreamHouseLinkThree: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'href'
+    },
+    dreamHouseLinkTitleOne: {
+      type: 'string',
+      selector: '#dreamHouseLinkTitleOne'
+    },
+    dreamHouseLinkTitleTwo: {
+      type: 'string',
+      selector: '#dreamHouseLinkTitleTwo'
+    },
+    dreamHouseLinkTitleThree: {
+      type: 'string',
+      selector: '#dreamHouseLinkTitleThree'
+    }
+  },
+  edit: function edit(props) {
+    var _props$attributes = props.attributes,
+        dreamHouseDescriptionOne = _props$attributes.dreamHouseDescriptionOne,
+        dreamHouseDescriptionTwo = _props$attributes.dreamHouseDescriptionTwo,
+        dreamHouseDescriptionThree = _props$attributes.dreamHouseDescriptionThree,
+        dreamHouseImageOne = _props$attributes.dreamHouseImageOne,
+        dreamHouseImageOneAltText = _props$attributes.dreamHouseImageOneAltText,
+        dreamHouseImageTwo = _props$attributes.dreamHouseImageTwo,
+        dreamHouseImageTwoAltText = _props$attributes.dreamHouseImageTwoAltText,
+        dreamHouseImageThree = _props$attributes.dreamHouseImageThree,
+        dreamHouseImageThreeAltText = _props$attributes.dreamHouseImageThreeAltText,
+        dreamHouseLinkOne = _props$attributes.dreamHouseLinkOne,
+        dreamHouseLinkTwo = _props$attributes.dreamHouseLinkTwo,
+        dreamHouseLinkThree = _props$attributes.dreamHouseLinkThree,
+        dreamHouseLinkTitleOne = _props$attributes.dreamHouseLinkTitleOne,
+        dreamHouseLinkTitleTwo = _props$attributes.dreamHouseLinkTitleTwo,
+        dreamHouseLinkTitleThree = _props$attributes.dreamHouseLinkTitleThree,
+        setAttributes = props.setAttributes;
+
+    var getDreamHouseDescriptionOne = function getDreamHouseDescriptionOne(textOne) {
+      setAttributes({
+        dreamHouseDescriptionOne: textOne
+      });
+    };
+
+    var getDreamHouseDescriptionTwo = function getDreamHouseDescriptionTwo(textTwo) {
+      setAttributes({
+        dreamHouseDescriptionTwo: textTwo
+      });
+    };
+
+    var getDreamHouseDescriptionThree = function getDreamHouseDescriptionThree(textThree) {
+      setAttributes({
+        dreamHouseDescriptionThree: textThree
+      });
+    };
+
+    var selectDreamHouseImageOne = function selectDreamHouseImageOne(imageOne) {
+      setAttributes({
+        dreamHouseImageOne: imageOne.sizes.full.url
+      });
+      setAttributes({
+        dreamHouseImageOneAltText: imageOne.alt
+      });
+    };
+
+    var selectDreamHouseImageTwo = function selectDreamHouseImageTwo(imageTwo) {
+      setAttributes({
+        dreamHouseImageTwo: imageTwo.sizes.full.url
+      });
+      setAttributes({
+        dreamHouseImageTwoAltText: imageTwo.alt
+      });
+    };
+
+    var selectDreamHouseImageThree = function selectDreamHouseImageThree(imageThree) {
+      setAttributes({
+        dreamHouseImageThree: imageThree.sizes.full.url
+      });
+      setAttributes({
+        dreamHouseImageThreeAltText: imageThree.alt
+      });
+    };
+
+    var getDreamHouseLinkOne = function getDreamHouseLinkOne(linkOne) {
+      setAttributes({
+        dreamHouseLinkOne: linkOne
+      });
+    };
+
+    var getDreamHouseLinkTwo = function getDreamHouseLinkTwo(linkTwo) {
+      setAttributes({
+        dreamHouseLinkTwo: linkTwo
+      });
+    };
+
+    var getDreamHouseLinkThree = function getDreamHouseLinkThree(linkThree) {
+      setAttributes({
+        dreamHouseLinkThree: linkThree
+      });
+    };
+
+    var getDreamHouseLinkTitleOne = function getDreamHouseLinkTitleOne(linkTitleOne) {
+      setAttributes({
+        dreamHouseLinkTitleOne: linkTitleOne
+      });
+    };
+
+    var getDreamHouseLinkTitleTwo = function getDreamHouseLinkTitleTwo(linkTitleTwo) {
+      setAttributes({
+        dreamHouseLinkTitleTwo: linkTitleTwo
+      });
+    };
+
+    var getDreamHouseLinkTitleThree = function getDreamHouseLinkTitleThree(linkTitleThree) {
+      setAttributes({
+        dreamHouseLinkTitleThree: linkTitleThree
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: 'Link Options One',
+      initialOpen: true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control__field"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("label", {
+      className: "components-base-control__label"
+    }, "Link Options One"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(URLInputButton, {
+      onChange: getDreamHouseLinkOne,
+      url: dreamHouseLinkOne
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add link title",
+      onChange: getDreamHouseLinkTitleOne,
+      value: dreamHouseLinkTitleOne
+    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: 'Link Options Two',
+      initialOpen: false
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control__field"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("label", {
+      className: "components-base-control__label"
+    }, "Link Options Two"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(URLInputButton, {
+      onChange: getDreamHouseLinkTwo,
+      url: dreamHouseLinkTwo
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add link title",
+      onChange: getDreamHouseLinkTitleTwo,
+      value: dreamHouseLinkTitleTwo
+    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: 'Link Options Three',
+      initialOpen: false
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control__field"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("label", {
+      className: "components-base-control__label"
+    }, "Link Options Three"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(URLInputButton, {
+      onChange: getDreamHouseLinkThree,
+      url: dreamHouseLinkThree
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add link title",
+      onChange: getDreamHouseLinkTitleThree,
+      value: dreamHouseLinkTitleThree
+    }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--outer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--inner"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
+      onSelect: selectDreamHouseImageOne,
+      type: "image",
+      render: function render(_ref) {
+        var open = _ref.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
+          className: "upload-button-image",
+          onClick: open,
+          icon: "format-image",
+          showTooltip: "true",
+          label: "Change image"
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(dreamHouseImageOne),
+      className: "card__image",
+      id: "dreamHouseImageOne",
+      alt: dreamHouseImageOneAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      id: "dreamHouseDescriptionOne"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add your description",
+      onChange: getDreamHouseDescriptionOne,
+      value: dreamHouseDescriptionOne
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: dreamHouseLinkOne,
+      className: "button button__outline button__icon button__outline--right-arrow card__button",
+      target: "_self",
+      id: "dreamHouseLinkTitleOne"
+    }, dreamHouseLinkTitleOne, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--inner"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
+      onSelect: selectDreamHouseImageTwo,
+      type: "image",
+      render: function render(_ref2) {
+        var open = _ref2.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
+          className: "upload-button-image",
+          onClick: open,
+          icon: "format-image",
+          showTooltip: "true",
+          label: "Change image"
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(dreamHouseImageTwo),
+      className: "card__image",
+      id: "dreamHouseImageTwo",
+      alt: dreamHouseImageTwoAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      id: "dreamHouseDescriptionTwo"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add your description",
+      onChange: getDreamHouseDescriptionTwo,
+      value: dreamHouseDescriptionTwo
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: dreamHouseLinkTwo,
+      className: "button button__outline button__icon button__outline--right-arrow card__button",
+      target: "_self",
+      id: "dreamHouseLinkTitleTwo"
+    }, dreamHouseLinkTitleTwo, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--inner"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
+      onSelect: selectDreamHouseImageThree,
+      type: "image",
+      render: function render(_ref3) {
+        var open = _ref3.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
+          className: "upload-button-image",
+          onClick: open,
+          icon: "format-image",
+          showTooltip: "true",
+          label: "Change image"
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(dreamHouseImageThree),
+      className: "card__image",
+      id: "dreamHouseImageThree",
+      alt: dreamHouseImageThreeAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      id: "dreamHouseDescriptionThree"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add your description",
+      onChange: getDreamHouseDescriptionThree,
+      value: dreamHouseDescriptionThree
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: dreamHouseLinkThree,
+      className: "button button__outline button__icon button__outline--right-arrow card__button",
+      target: "_self",
+      id: "dreamHouseLinkTitleThree"
+    }, dreamHouseLinkTitleThree, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)))))));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        dreamHouseDescriptionOne = _props$attributes2.dreamHouseDescriptionOne,
+        dreamHouseDescriptionTwo = _props$attributes2.dreamHouseDescriptionTwo,
+        dreamHouseDescriptionThree = _props$attributes2.dreamHouseDescriptionThree,
+        dreamHouseImageOne = _props$attributes2.dreamHouseImageOne,
+        dreamHouseImageOneAltText = _props$attributes2.dreamHouseImageOneAltText,
+        dreamHouseImageTwo = _props$attributes2.dreamHouseImageTwo,
+        dreamHouseImageTwoAltText = _props$attributes2.dreamHouseImageTwoAltText,
+        dreamHouseImageThree = _props$attributes2.dreamHouseImageThree,
+        dreamHouseImageThreeAltText = _props$attributes2.dreamHouseImageThreeAltText,
+        dreamHouseLinkOne = _props$attributes2.dreamHouseLinkOne,
+        dreamHouseLinkTwo = _props$attributes2.dreamHouseLinkTwo,
+        dreamHouseLinkThree = _props$attributes2.dreamHouseLinkThree,
+        dreamHouseLinkTitleOne = _props$attributes2.dreamHouseLinkTitleOne,
+        dreamHouseLinkTitleTwo = _props$attributes2.dreamHouseLinkTitleTwo,
+        dreamHouseLinkTitleThree = _props$attributes2.dreamHouseLinkTitleThree;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--outer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--inner"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(dreamHouseImageOne),
+      className: "card__image",
+      id: "dreamHouseImageOne",
+      alt: dreamHouseImageOneAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      id: "dreamHouseDescriptionOne"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: dreamHouseDescriptionOne
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: dreamHouseLinkOne,
+      className: "button button__outline button__icon button__outline--right-arrow card__button",
+      target: "_self",
+      id: "dreamHouseLinkTitleOne"
+    }, dreamHouseLinkTitleOne, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--inner"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(dreamHouseImageTwo),
+      className: "card__image",
+      id: "dreamHouseImageTwo",
+      alt: dreamHouseImageTwoAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      id: "dreamHouseDescriptionTwo"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: dreamHouseDescriptionTwo
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: dreamHouseLinkTwo,
+      className: "button button__outline button__icon button__outline--right-arrow card__button",
+      target: "_self",
+      id: "dreamHouseLinkTitleTwo"
+    }, dreamHouseLinkTitleTwo, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__wrap--inner"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(dreamHouseImageThree),
+      className: "card__image",
+      id: "dreamHouseImageThree",
+      alt: dreamHouseImageThreeAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      id: "dreamHouseDescriptionThree"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: dreamHouseDescriptionThree
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      href: dreamHouseLinkThree,
+      className: "button button__outline button__icon button__outline--right-arrow card__button",
+      target: "_self",
+      id: "dreamHouseLinkTitleThree"
+    }, dreamHouseLinkTitleThree, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null))))));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/components/hero/index.js":
 /*!**************************************!*\
   !*** ./src/components/hero/index.js ***!
@@ -325,8 +776,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_brand__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/brand */ "./src/components/brand/index.js");
 /* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/hero */ "./src/components/hero/index.js");
+/* harmony import */ var _components_dream_houses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/dream-houses */ "./src/components/dream-houses/index.js");
 // Styles
  // Components
+
 
 
 

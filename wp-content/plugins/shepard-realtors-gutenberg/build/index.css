@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@300;400;600&display=swap);
 .upload-button-image {
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  display: table;
+  margin: 0 auto;
   background-color: #FFFFFF;
   box-shadow: 0 4px 12px -6px #210B2C;
   margin-bottom: 1rem; }
@@ -108,6 +114,57 @@ button {
   .hero-image-section h5,
   .hero-image-section p {
     color: #FFFFFF; } }
+
+.card__wrap--outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.card__wrap--inner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 12px; }
+  @media screen and (min-width: 480px) {
+    .card__wrap--inner {
+      width: 50%; } }
+  @media screen and (min-width: 1024px) {
+    .card__wrap--inner {
+      width: 33.33%; } }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: none !important; }
+  .card__image {
+    width: 100%;
+    display: block;
+    min-height: 188px;
+    max-height: 188px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
+    border-radius: 8px; }
+  .card__item {
+    padding: 4px; }
+  .card__flexible {
+    width: 100%;
+    flex-grow: 1; }
+    .card__flexible p {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 130%;
+      letter-spacing: 0.15px;
+      color: #210B2C; }
+  .card__button {
+    font-size: 12px !important; }
+  .card__footer {
+    overflow: hidden; }
 
 
 /*# sourceMappingURL=index.css.map*/
