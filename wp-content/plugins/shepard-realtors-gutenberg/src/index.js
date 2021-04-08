@@ -5,3 +5,4 @@ import './scss/styles.scss';
 import './components/brand';
 import './components/hero';
 import './components/dream-houses';
+import './components/properties';

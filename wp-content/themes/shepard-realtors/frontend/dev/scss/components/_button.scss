@@ -73,19 +73,18 @@
         width: 100%;
         padding: 1em 4em;
         border: 2px solid $primary-color-pico-pink;
-        color: $primary-color-pico-pink;
         &:active,
         &:visited,
         &:focus {
             outline: none; 
-            color: $support-color-pure-white; 
+            color: $support-color-pure-white !important;  
             border: 2px solid $primary-color-pico-pink-pressed;
             background-color: $primary-color-pico-pink-pressed;
         }
         &:hover {
             border: 2px solid $primary-color-pico-pink;
             background-color: $primary-color-pico-pink;
-            color: $support-color-pure-white;
+            color: $support-color-pure-white !important;
         }
         &.disabled {
             &:hover,
@@ -101,6 +100,8 @@
             color:  $support-color-silver;
             background-color: $support-color-pure-white;
         }
+        color: $primary-color-pico-pink !important;
+
     } 
     &__outline--small {
         font-size: 12px;

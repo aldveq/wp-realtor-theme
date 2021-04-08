@@ -75,5 +75,18 @@ function shepard_realtors_blocks() {
         ));
     }
 
+    // Registration of dynamic blocks
+    register_block_type('shepard-realtors/properties', array(
+        'editor_script' => 'shepard-realtors-editor-script',
+        'editor_style' => 'shepard-realtors-editor-styles',
+        'style' => 'shepard-realtors-frontend-backend-styles',
+        'render_callback' => 'shepard_realtors_properties_block_callback'
+    ));
+
 }
 add_action('init', 'shepard_realtors_blocks');
+
+// Getting data of properties from the wp rest api
+function shepard_realtors_properties_block_callback() {
+    return '<h1>From the editor!</h1>';
+}

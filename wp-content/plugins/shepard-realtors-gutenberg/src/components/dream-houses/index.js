@@ -1,6 +1,5 @@
 const { registerBlockType } = wp.blocks;
 const { RichText, MediaUpload, URLInputButton, InspectorControls } = wp.blockEditor;
-// const LinkControl = __experimentalLinkControl;
 const { Button, PanelBody } = wp.components;
 import { setDefaultImage } from '../../utilities';
 
@@ -13,68 +12,74 @@ registerBlockType('shepard-realtors/dream-houses', {
         dreamHouseDescriptionOne: {
             type: 'string',
             source: 'html', 
-            selector: '#dreamHouseDescriptionOne'
+            selector: '.dreamHouseDescriptionOne'
         },
         dreamHouseDescriptionTwo: {
             type: 'string',
             source: 'html', 
-            selector: '#dreamHouseDescriptionTwo'
+            selector: '.dreamHouseDescriptionTwo'
         },
         dreamHouseDescriptionThree: {
             type: 'string',
             source: 'html', 
-            selector: '#dreamHouseDescriptionThree'
+            selector: '.dreamHouseDescriptionThree'
         },
         dreamHouseImageOne: {
             type: 'string',
-            selector: '#dreamHouseImageOne'
+            selector: '.dreamHouseImageOne'
         },
         dreamHouseImageOneAltText: {
             type: 'string',
-            selector: '#dreamHouseImageOne'
+            selector: '.dreamHouseImageOne'
         },
         dreamHouseImageTwo: {
             type: 'string',
-            selector: '#dreamHouseImageTwo'
+            selector: '.dreamHouseImageTwo'
         },
         dreamHouseImageTwoAltText: {
             type: 'string',
-            selector: '#dreamHouseImageTwo'
+            selector: '.dreamHouseImageTwo'
         },
         dreamHouseImageThree: {
             type: 'string',
-            selector: '#dreamHouseImageThree'
+            selector: '.dreamHouseImageThree'
         },
         dreamHouseImageThreeAltText: {
             type: 'string',
-            selector: '#dreamHouseImageThree'
+            selector: '.dreamHouseImageThree'
         },
         dreamHouseLinkOne: {
             type: 'string',
             source: 'attribute',
+            selector: 'a.dreamHouseLinkTitleOne',
             attribute: 'href'
         },
         dreamHouseLinkTwo: {
             type: 'string',
             source: 'attribute',
+            selector: 'a.dreamHouseLinkTitleTwo',
             attribute: 'href'
         },
         dreamHouseLinkThree: {
             type: 'string',
             source: 'attribute',
+            selector: 'a.dreamHouseLinkTitleThree',
             attribute: 'href'
         },
         dreamHouseLinkTitleOne: {
             type: 'string',
-            selector: '#dreamHouseLinkTitleOne'
+            source: 'text',
+            selector: 'a.dreamHouseLinkTitleOne',
         },
         dreamHouseLinkTitleTwo: {
             type: 'string',
-            selector: '#dreamHouseLinkTitleTwo'
+            source: 'text',
+            selector: 'a.dreamHouseLinkTitleTwo',
         },
         dreamHouseLinkTitleThree: {
             type: 'string',
-            selector: '#dreamHouseLinkTitleThree'
+            source: 'text',
+            selector: 'a.dreamHouseLinkTitleThree',
         }
     },  
     edit: (props) => {
@@ -154,16 +159,15 @@ registerBlockType('shepard-realtors/dream-houses', {
             <>
                 <InspectorControls>
                     
-                    <PanelBody title={'Link Options One'} initialOpen={true}>
+                    <PanelBody title={'Dream House Settings First'} initialOpen={true}>
                         <div className="components-base-control">
                             <div className="components-base-control__field">
-                                <label className="components-base-control__label">
-                                    Link Options One
-                                </label>
                                 <URLInputButton 
+                                    placeholder="Add link"
                                     onChange={getDreamHouseLinkOne}
                                     url={dreamHouseLinkOne}
                                 />
+                                <br/>
                                 <RichText 
                                     placeholder="Add link title"
                                     onChange={getDreamHouseLinkTitleOne}
@@ -173,16 +177,15 @@ registerBlockType('shepard-realtors/dream-houses', {
                         </div>
                     </PanelBody>
 
-                    <PanelBody title={'Link Options Two'} initialOpen={false}>
+                    <PanelBody title={'Dream House Settings Second'} initialOpen={false}>
                         <div className="components-base-control">
                             <div className="components-base-control__field">
-                                <label className="components-base-control__label">
-                                    Link Options Two
-                                </label>
                                 <URLInputButton 
+                                    placeholder="Add link"
                                     onChange={getDreamHouseLinkTwo}
                                     url={dreamHouseLinkTwo}
                                 />
+                                <br/>
                                 <RichText 
                                     placeholder="Add link title"
                                     onChange={getDreamHouseLinkTitleTwo}
@@ -192,16 +195,15 @@ registerBlockType('shepard-realtors/dream-houses', {
                         </div>
                     </PanelBody>
 
-                    <PanelBody title={'Link Options Three'} initialOpen={false}>
+                    <PanelBody title={'Dream House Settings Third'} initialOpen={false}>
                         <div className="components-base-control">
                             <div className="components-base-control__field">
-                                <label className="components-base-control__label">
-                                    Link Options Three
-                                </label>
                                 <URLInputButton 
+                                    placeholder="Add link"
                                     onChange={getDreamHouseLinkThree}
                                     url={dreamHouseLinkThree}
                                 />
+                                <br/>
                                 <RichText 
                                     placeholder="Add link title"
                                     onChange={getDreamHouseLinkTitleThree}
@@ -229,9 +231,9 @@ registerBlockType('shepard-realtors/dream-houses', {
                                     />
                                 )}
                             />
-                            <img src={setDefaultImage(dreamHouseImageOne)} className="card__image" id="dreamHouseImageOne" alt={dreamHouseImageOneAltText} />
+                            <img src={setDefaultImage(dreamHouseImageOne)} className="card__image" className="dreamHouseImageOne" alt={dreamHouseImageOneAltText} />
                             <div className="card__item card__flexible">
-                                <p id="dreamHouseDescriptionOne">
+                                <p className="dreamHouseDescriptionOne">
                                     <RichText 
                                         placeholder="Add your description"
                                         onChange={getDreamHouseDescriptionOne}
@@ -240,7 +242,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                                 </p>
                             </div>
                             <div className="card__footer">
-                                <a href={dreamHouseLinkOne} className="button button__outline button__icon button__outline--right-arrow card__button" target="_self" id="dreamHouseLinkTitleOne">{dreamHouseLinkTitleOne}<span></span></a>
+                                <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne" target="_self" rel="noopener" href={dreamHouseLinkOne}>{dreamHouseLinkTitleOne}<span></span></a>
                             </div>
                         </div>
                     </div>
@@ -260,9 +262,9 @@ registerBlockType('shepard-realtors/dream-houses', {
                                     />
                                 )}
                             />
-                            <img src={setDefaultImage(dreamHouseImageTwo)} className="card__image" id="dreamHouseImageTwo" alt={dreamHouseImageTwoAltText} />
+                            <img src={setDefaultImage(dreamHouseImageTwo)} className="card__image" className="dreamHouseImageTwo" alt={dreamHouseImageTwoAltText} />
                             <div className="card__item card__flexible">
-                                <p id="dreamHouseDescriptionTwo">
+                                <p className="dreamHouseDescriptionTwo">
                                     <RichText 
                                         placeholder="Add your description"
                                         onChange={getDreamHouseDescriptionTwo}
@@ -271,7 +273,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                                 </p>
                             </div>
                             <div className="card__footer">
-                                <a href={dreamHouseLinkTwo} className="button button__outline button__icon button__outline--right-arrow card__button" target="_self" id="dreamHouseLinkTitleTwo">{dreamHouseLinkTitleTwo}<span></span></a>
+                                <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo" target="_self" rel="noopener" href={dreamHouseLinkTwo}>{dreamHouseLinkTitleTwo}<span></span></a>
                             </div>
                         </div>
                     </div>
@@ -291,9 +293,9 @@ registerBlockType('shepard-realtors/dream-houses', {
                                     />
                                 )}
                             />
-                            <img src={setDefaultImage(dreamHouseImageThree)} className="card__image" id="dreamHouseImageThree" alt={dreamHouseImageThreeAltText} />
+                            <img src={setDefaultImage(dreamHouseImageThree)} className="card__image" className="dreamHouseImageThree" alt={dreamHouseImageThreeAltText} />
                             <div className="card__item card__flexible">
-                                <p id="dreamHouseDescriptionThree">
+                                <p className="dreamHouseDescriptionThree">
                                     <RichText 
                                         placeholder="Add your description"
                                         onChange={getDreamHouseDescriptionThree}
@@ -302,7 +304,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                                 </p>
                             </div>
                             <div className="card__footer">
-                                <a href={dreamHouseLinkThree} className="button button__outline button__icon button__outline--right-arrow card__button" target="_self" id="dreamHouseLinkTitleThree">{dreamHouseLinkTitleThree}<span></span></a>
+                                <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree" target="_self" rel="noopener" href={dreamHouseLinkThree} >{dreamHouseLinkTitleThree}<span></span></a>
                             </div>
                         </div>
                     </div>
@@ -338,42 +340,42 @@ registerBlockType('shepard-realtors/dream-houses', {
 
                 <div className="card__wrap--inner">
                     <div className="card">
-                        <img src={setDefaultImage(dreamHouseImageOne)} className="card__image" id="dreamHouseImageOne" alt={dreamHouseImageOneAltText} />
+                        <img src={setDefaultImage(dreamHouseImageOne)} className="card__image" className="dreamHouseImageOne" alt={dreamHouseImageOneAltText} />
                         <div className="card__item card__flexible">
-                            <p id="dreamHouseDescriptionOne">
+                            <p className="dreamHouseDescriptionOne">
                                 <RichText.Content value={dreamHouseDescriptionOne} />
                             </p>
                         </div>
                         <div className="card__footer">
-                            <a href={dreamHouseLinkOne} className="button button__outline button__icon button__outline--right-arrow card__button" target="_self" id="dreamHouseLinkTitleOne">{dreamHouseLinkTitleOne}<span></span></a>
+                            <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne" target="_self" rel="noopener" href={dreamHouseLinkOne}>{dreamHouseLinkTitleOne}<span></span></a>
                         </div>
                     </div>
                 </div>
                     
                 <div className="card__wrap--inner">
                     <div className="card">
-                        <img src={setDefaultImage(dreamHouseImageTwo)} className="card__image" id="dreamHouseImageTwo" alt={dreamHouseImageTwoAltText} />
+                        <img src={setDefaultImage(dreamHouseImageTwo)} className="card__image" className="dreamHouseImageTwo" alt={dreamHouseImageTwoAltText} />
                         <div className="card__item card__flexible">
-                            <p id="dreamHouseDescriptionTwo">
+                            <p className="dreamHouseDescriptionTwo">
                                 <RichText.Content value={dreamHouseDescriptionTwo} />
                             </p>
                         </div>
                         <div className="card__footer">
-                            <a href={dreamHouseLinkTwo} className="button button__outline button__icon button__outline--right-arrow card__button" target="_self" id="dreamHouseLinkTitleTwo">{dreamHouseLinkTitleTwo}<span></span></a>
+                            <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo" target="_self" rel="noopener" href={dreamHouseLinkTwo} >{dreamHouseLinkTitleTwo}<span></span></a>
                         </div>
                     </div>
                 </div>
                     
                 <div className="card__wrap--inner">
                     <div className="card">
-                        <img src={setDefaultImage(dreamHouseImageThree)} className="card__image" id="dreamHouseImageThree" alt={dreamHouseImageThreeAltText} />
+                        <img src={setDefaultImage(dreamHouseImageThree)} className="card__image" className="dreamHouseImageThree" alt={dreamHouseImageThreeAltText} />
                         <div className="card__item card__flexible">
-                            <p id="dreamHouseDescriptionThree">
+                            <p className="dreamHouseDescriptionThree">
                                 <RichText.Content value={dreamHouseDescriptionThree} />
                             </p>
                         </div>
                         <div className="card__footer">
-                            <a href={dreamHouseLinkThree} className="button button__outline button__icon button__outline--right-arrow card__button" target="_self" id="dreamHouseLinkTitleThree">{dreamHouseLinkTitleThree}<span></span></a>
+                            <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree" target="_self" rel="noopener" href={dreamHouseLinkThree} >{dreamHouseLinkTitleThree}<span></span></a>
                         </div>
                     </div>
                 </div>

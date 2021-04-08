@@ -1,0 +1,90 @@
+.properties-container {
+    &__main-title {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: -0.5px;
+        color: $primary-color-imperial-primer;
+    }
+    // &__cards-wrapper {
+
+    // }
+    &__cards-inner-wrapper {
+        padding: 0;
+    }
+    &__card {
+        padding: 18px 14px;
+    }
+    &__image {
+        min-height: 279px !important;
+    }
+    &__flexible {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 14px;
+        margin-bottom: 14px;
+    }
+    &__address-container,
+    &__price-container {
+        width: 50%;
+    }
+    &__price-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    &__address-one,
+    &__address-two {
+        width: 100%;
+        display: block;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        letter-spacing: 0.15px;
+    }
+    &__address-one {
+        color: $primary-color-imperial-primer;
+    }
+    &__address-two {
+        color: $primary-color-concrete;
+    }
+    &__price {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 130%;
+        color: $primary-color-pico-pink;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 28px;
+    }
+    &__details-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__detail-svg-image {
+        margin-bottom: 7px;
+    }
+    &__details-text {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.1px;
+        color: $primary-color-imperial-primer;
+    }
+}

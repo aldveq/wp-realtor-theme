@@ -1,7 +1,6 @@
 const { registerBlockType } = wp.blocks;
 const { RichText, MediaUpload } = wp.blockEditor;
 const { Button } = wp.components;
-import { setDefaultImage } from '../../utilities';
 
 registerBlockType('shepard-realtors/brand', {
     title: 'Brand', 
