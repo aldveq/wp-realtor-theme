@@ -8,12 +8,18 @@
  *
  * @package Shepard_Realtors
  */
-
+$footer_copyright_text = get_theme_mod( '_shepard_realtors_footer_info', '' );
 ?>
 
 	<footer id="colophon" class="site-footer">
 		<div class="container">
-			<h6>©Elizabeth Shephard Realtors,  2021. All Rights Reserved.</h6>
+			<?php
+				if(!empty($footer_copyright_text)):
+					?>
+						<h6><?php echo esc_html( $footer_copyright_text ); ?></h6>
+					<?php
+				endif;
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
