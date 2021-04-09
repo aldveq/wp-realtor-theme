@@ -1,6 +1,8 @@
 const { registerBlockType } = wp.blocks;
 const { withSelect } = wp.data;
-const { Placeholder, Spinner } = wp.components;
+const { Placeholder, Spinner, PanelBody, TextControl } = wp.components;
+const { InspectorControls } = wp.blockEditor;
+
 import PropertiesContainer from '../../containers/PropertiesContainer';
 
 registerBlockType('shepard-realtors/properties', {
@@ -8,17 +10,30 @@ registerBlockType('shepard-realtors/properties', {
     description: 'Shepard Realtors Properties Block', 
     icon: 'admin-multisite',
     category: 'shepard-realtors',
-    edit: withSelect((select) => {
+    attributes: {
+        propertiesTitle: {
+            type: 'string',
+            default: 'Properties Title'
+        }
+    },
+    edit: withSelect((select, props) => {
         const { getEntityRecords } = select('core');
         const propertyQuery = {
-            per_page: 3
+            per_page: 6
+        }
+
+        const { setAttributes } = props;
+
+        const getPropertiesTitle = newTitle => {
+            setAttributes({propertiesTitle: newTitle});
         }
     
         return {
-            propertiesList: getEntityRecords('postType', 'property', propertyQuery)
+            propertiesList: getEntityRecords('postType', 'property', propertyQuery),
+            getPropertiesTitle
         }
     })(props => {
-        const { propertiesList } = props;
+        const { attributes: { propertiesTitle }, propertiesList, getPropertiesTitle } = props;
         const hasPosts = Array.isArray(propertiesList) && propertiesList.length;
     
         if (!hasPosts) {
@@ -29,7 +44,23 @@ registerBlockType('shepard-realtors/properties', {
             );
         }
     
-        return <PropertiesContainer properties={propertiesList} />;
+        return (
+            <>
+                <InspectorControls>
+                    <PanelBody title={'Properties Title'} initialOpen={true} >
+                        <div className="components-base-control">
+                            <div className="components-base-control__field">
+                                <TextControl 
+                                    onChange={getPropertiesTitle}
+                                    value={propertiesTitle}
+                                />
+                            </div>
+                        </div>
+                    </PanelBody>
+                </InspectorControls>
+                <PropertiesContainer properties={propertiesList} propertiesTitle={propertiesTitle} />
+            </>
+        );
     }),
     save: () => {
         return null;

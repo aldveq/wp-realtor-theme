@@ -802,34 +802,65 @@ var registerBlockType = wp.blocks.registerBlockType;
 var withSelect = wp.data.withSelect;
 var _wp$components = wp.components,
     Placeholder = _wp$components.Placeholder,
-    Spinner = _wp$components.Spinner;
+    Spinner = _wp$components.Spinner,
+    PanelBody = _wp$components.PanelBody,
+    TextControl = _wp$components.TextControl;
+var InspectorControls = wp.blockEditor.InspectorControls;
 
 registerBlockType('shepard-realtors/properties', {
   title: 'Properties',
   description: 'Shepard Realtors Properties Block',
   icon: 'admin-multisite',
   category: 'shepard-realtors',
-  edit: withSelect(function (select) {
+  attributes: {
+    propertiesTitle: {
+      type: 'string',
+      default: 'Properties Title'
+    }
+  },
+  edit: withSelect(function (select, props) {
     var _select = select('core'),
         getEntityRecords = _select.getEntityRecords;
 
     var propertyQuery = {
-      per_page: 3
+      per_page: 6
     };
+    var setAttributes = props.setAttributes;
+
+    var getPropertiesTitle = function getPropertiesTitle(newTitle) {
+      setAttributes({
+        propertiesTitle: newTitle
+      });
+    };
+
     return {
-      propertiesList: getEntityRecords('postType', 'property', propertyQuery)
+      propertiesList: getEntityRecords('postType', 'property', propertyQuery),
+      getPropertiesTitle: getPropertiesTitle
     };
   })(function (props) {
-    var propertiesList = props.propertiesList;
+    var propertiesTitle = props.attributes.propertiesTitle,
+        propertiesList = props.propertiesList,
+        getPropertiesTitle = props.getPropertiesTitle;
     var hasPosts = Array.isArray(propertiesList) && propertiesList.length;
 
     if (!hasPosts) {
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Placeholder, null, !Array.isArray(propertiesList) ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Spinner, null) : 'No properties found.');
     }
 
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_containers_PropertiesContainer__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      properties: propertiesList
-    });
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: 'Properties Title',
+      initialOpen: true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control__field"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+      onChange: getPropertiesTitle,
+      value: propertiesTitle
+    }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_containers_PropertiesContainer__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      properties: propertiesList,
+      propertiesTitle: propertiesTitle
+    }));
   }),
   save: function save() {
     return null;
@@ -947,14 +978,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var PropertiesContainer = function PropertiesContainer(_ref) {
-  var properties = _ref.properties;
+  var properties = _ref.properties,
+      propertiesTitle = _ref.propertiesTitle;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
     className: "properties-container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "container"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h2", {
     class: "properties-container__main-title"
-  }, "Featured Properties"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+  }, propertiesTitle), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     class: "card__wrap--outer properties-container__cards-wrapper"
   }, properties.map(function (propData) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_propertiesItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
