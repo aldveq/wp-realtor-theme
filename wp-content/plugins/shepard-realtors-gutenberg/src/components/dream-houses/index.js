@@ -1,6 +1,6 @@
 const { registerBlockType } = wp.blocks;
 const { RichText, MediaUpload, URLInputButton, InspectorControls } = wp.blockEditor;
-const { Button, PanelBody } = wp.components;
+const { Button, PanelBody, TextControl } = wp.components;
 import { setDefaultImage } from '../../utilities';
 
 registerBlockType('shepard-realtors/dream-houses', {
@@ -48,38 +48,23 @@ registerBlockType('shepard-realtors/dream-houses', {
             type: 'string',
             selector: '.dreamHouseImageThree'
         },
-        dreamHouseLinkOne: {
-            type: 'string',
-            source: 'attribute',
-            selector: 'a.dreamHouseLinkTitleOne',
-            attribute: 'href'
-        },
-        dreamHouseLinkTwo: {
-            type: 'string',
-            source: 'attribute',
-            selector: 'a.dreamHouseLinkTitleTwo',
-            attribute: 'href'
-        },
-        dreamHouseLinkThree: {
-            type: 'string',
-            source: 'attribute',
-            selector: 'a.dreamHouseLinkTitleThree',
-            attribute: 'href'
-        },
         dreamHouseLinkTitleOne: {
             type: 'string',
             source: 'text',
-            selector: 'a.dreamHouseLinkTitleOne',
+            selector: 'button.dreamHouseLinkTitleOne',
+            default: 'Buyers'
         },
         dreamHouseLinkTitleTwo: {
             type: 'string',
             source: 'text',
-            selector: 'a.dreamHouseLinkTitleTwo',
+            selector: 'button.dreamHouseLinkTitleTwo',
+            default: 'Sellers'
         },
         dreamHouseLinkTitleThree: {
             type: 'string',
             source: 'text',
-            selector: 'a.dreamHouseLinkTitleThree',
+            selector: 'button.dreamHouseLinkTitleThree',
+            default: 'Investors'
         }
     },  
     edit: (props) => {
@@ -94,9 +79,6 @@ registerBlockType('shepard-realtors/dream-houses', {
                 dreamHouseImageTwoAltText,
                 dreamHouseImageThree, 
                 dreamHouseImageThreeAltText,
-                dreamHouseLinkOne,
-                dreamHouseLinkTwo,
-                dreamHouseLinkThree,
                 dreamHouseLinkTitleOne,
                 dreamHouseLinkTitleTwo,
                 dreamHouseLinkTitleThree
@@ -131,18 +113,6 @@ registerBlockType('shepard-realtors/dream-houses', {
             setAttributes({dreamHouseImageThreeAltText: imageThree.alt});
         }
 
-        const getDreamHouseLinkOne = linkOne => {
-            setAttributes({dreamHouseLinkOne: linkOne});
-        }
-
-        const getDreamHouseLinkTwo = linkTwo => {
-            setAttributes({dreamHouseLinkTwo: linkTwo});
-        }
-
-        const getDreamHouseLinkThree = linkThree => {
-            setAttributes({dreamHouseLinkThree: linkThree});
-        }
-
         const getDreamHouseLinkTitleOne = linkTitleOne => {
             setAttributes({dreamHouseLinkTitleOne: linkTitleOne});
         }
@@ -159,16 +129,10 @@ registerBlockType('shepard-realtors/dream-houses', {
             <>
                 <InspectorControls>
                     
-                    <PanelBody title={'Dream House Settings First'} initialOpen={true}>
+                    <PanelBody title={'Button Settings First'} initialOpen={true}>
                         <div className="components-base-control">
                             <div className="components-base-control__field">
-                                <URLInputButton 
-                                    placeholder="Add link"
-                                    onChange={getDreamHouseLinkOne}
-                                    url={dreamHouseLinkOne}
-                                />
-                                <br/>
-                                <RichText 
+                                <TextControl 
                                     placeholder="Add link title"
                                     onChange={getDreamHouseLinkTitleOne}
                                     value={dreamHouseLinkTitleOne}
@@ -177,16 +141,10 @@ registerBlockType('shepard-realtors/dream-houses', {
                         </div>
                     </PanelBody>
 
-                    <PanelBody title={'Dream House Settings Second'} initialOpen={false}>
+                    <PanelBody title={'Button Settings Second'} initialOpen={false}>
                         <div className="components-base-control">
                             <div className="components-base-control__field">
-                                <URLInputButton 
-                                    placeholder="Add link"
-                                    onChange={getDreamHouseLinkTwo}
-                                    url={dreamHouseLinkTwo}
-                                />
-                                <br/>
-                                <RichText 
+                                <TextControl 
                                     placeholder="Add link title"
                                     onChange={getDreamHouseLinkTitleTwo}
                                     value={dreamHouseLinkTitleTwo}
@@ -195,16 +153,10 @@ registerBlockType('shepard-realtors/dream-houses', {
                         </div>
                     </PanelBody>
 
-                    <PanelBody title={'Dream House Settings Third'} initialOpen={false}>
+                    <PanelBody title={'Button Settings Third'} initialOpen={false}>
                         <div className="components-base-control">
                             <div className="components-base-control__field">
-                                <URLInputButton 
-                                    placeholder="Add link"
-                                    onChange={getDreamHouseLinkThree}
-                                    url={dreamHouseLinkThree}
-                                />
-                                <br/>
-                                <RichText 
+                                <TextControl 
                                     placeholder="Add link title"
                                     onChange={getDreamHouseLinkTitleThree}
                                     value={dreamHouseLinkTitleThree}
@@ -242,7 +194,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                                 </p>
                             </div>
                             <div className="card__footer">
-                                <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne" target="_self" rel="noopener" href={dreamHouseLinkOne}>{dreamHouseLinkTitleOne}<span></span></a>
+                                <button className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne">{dreamHouseLinkTitleOne}<span></span></button>
                             </div>
                         </div>
                     </div>
@@ -273,7 +225,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                                 </p>
                             </div>
                             <div className="card__footer">
-                                <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo" target="_self" rel="noopener" href={dreamHouseLinkTwo}>{dreamHouseLinkTitleTwo}<span></span></a>
+                                <button className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo" >{dreamHouseLinkTitleTwo}<span></span></button>
                             </div>
                         </div>
                     </div>
@@ -304,7 +256,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                                 </p>
                             </div>
                             <div className="card__footer">
-                                <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree" target="_self" rel="noopener" href={dreamHouseLinkThree} >{dreamHouseLinkTitleThree}<span></span></a>
+                                <button className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree">{dreamHouseLinkTitleThree}<span></span></button>
                             </div>
                         </div>
                     </div>
@@ -326,9 +278,6 @@ registerBlockType('shepard-realtors/dream-houses', {
                 dreamHouseImageTwoAltText,
                 dreamHouseImageThree, 
                 dreamHouseImageThreeAltText,
-                dreamHouseLinkOne,
-                dreamHouseLinkTwo,
-                dreamHouseLinkThree,
                 dreamHouseLinkTitleOne,
                 dreamHouseLinkTitleTwo,
                 dreamHouseLinkTitleThree
@@ -347,7 +296,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                             </p>
                         </div>
                         <div className="card__footer">
-                            <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne" target="_self" rel="noopener" href={dreamHouseLinkOne}>{dreamHouseLinkTitleOne}<span></span></a>
+                            <button className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne">{dreamHouseLinkTitleOne}<span></span></button>
                         </div>
                     </div>
                 </div>
@@ -361,7 +310,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                             </p>
                         </div>
                         <div className="card__footer">
-                            <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo" target="_self" rel="noopener" href={dreamHouseLinkTwo} >{dreamHouseLinkTitleTwo}<span></span></a>
+                            <button className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo" >{dreamHouseLinkTitleTwo}<span></span></button>
                         </div>
                     </div>
                 </div>
@@ -375,7 +324,7 @@ registerBlockType('shepard-realtors/dream-houses', {
                             </p>
                         </div>
                         <div className="card__footer">
-                            <a className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree" target="_self" rel="noopener" href={dreamHouseLinkThree} >{dreamHouseLinkTitleThree}<span></span></a>
+                            <button className="button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree">{dreamHouseLinkTitleThree}<span></span></button>
                         </div>
                     </div>
                 </div>

@@ -244,7 +244,8 @@ var _wp$blockEditor = wp.blockEditor,
     InspectorControls = _wp$blockEditor.InspectorControls;
 var _wp$components = wp.components,
     Button = _wp$components.Button,
-    PanelBody = _wp$components.PanelBody;
+    PanelBody = _wp$components.PanelBody,
+    TextControl = _wp$components.TextControl;
 
 registerBlockType('shepard-realtors/dream-houses', {
   title: 'Dream Houses',
@@ -291,38 +292,23 @@ registerBlockType('shepard-realtors/dream-houses', {
       type: 'string',
       selector: '.dreamHouseImageThree'
     },
-    dreamHouseLinkOne: {
-      type: 'string',
-      source: 'attribute',
-      selector: 'a.dreamHouseLinkTitleOne',
-      attribute: 'href'
-    },
-    dreamHouseLinkTwo: {
-      type: 'string',
-      source: 'attribute',
-      selector: 'a.dreamHouseLinkTitleTwo',
-      attribute: 'href'
-    },
-    dreamHouseLinkThree: {
-      type: 'string',
-      source: 'attribute',
-      selector: 'a.dreamHouseLinkTitleThree',
-      attribute: 'href'
-    },
     dreamHouseLinkTitleOne: {
       type: 'string',
       source: 'text',
-      selector: 'a.dreamHouseLinkTitleOne'
+      selector: 'button.dreamHouseLinkTitleOne',
+      default: 'Buyers'
     },
     dreamHouseLinkTitleTwo: {
       type: 'string',
       source: 'text',
-      selector: 'a.dreamHouseLinkTitleTwo'
+      selector: 'button.dreamHouseLinkTitleTwo',
+      default: 'Sellers'
     },
     dreamHouseLinkTitleThree: {
       type: 'string',
       source: 'text',
-      selector: 'a.dreamHouseLinkTitleThree'
+      selector: 'button.dreamHouseLinkTitleThree',
+      default: 'Investors'
     }
   },
   edit: function edit(props) {
@@ -338,9 +324,6 @@ registerBlockType('shepard-realtors/dream-houses', {
         dreamHouseImageTwoAltText = _props$attributes.dreamHouseImageTwoAltText,
         dreamHouseImageThree = _props$attributes.dreamHouseImageThree,
         dreamHouseImageThreeAltText = _props$attributes.dreamHouseImageThreeAltText,
-        dreamHouseLinkOne = _props$attributes.dreamHouseLinkOne,
-        dreamHouseLinkTwo = _props$attributes.dreamHouseLinkTwo,
-        dreamHouseLinkThree = _props$attributes.dreamHouseLinkThree,
         dreamHouseLinkTitleOne = _props$attributes.dreamHouseLinkTitleOne,
         dreamHouseLinkTitleTwo = _props$attributes.dreamHouseLinkTitleTwo,
         dreamHouseLinkTitleThree = _props$attributes.dreamHouseLinkTitleThree,
@@ -391,24 +374,6 @@ registerBlockType('shepard-realtors/dream-houses', {
       });
     };
 
-    var getDreamHouseLinkOne = function getDreamHouseLinkOne(linkOne) {
-      setAttributes({
-        dreamHouseLinkOne: linkOne
-      });
-    };
-
-    var getDreamHouseLinkTwo = function getDreamHouseLinkTwo(linkTwo) {
-      setAttributes({
-        dreamHouseLinkTwo: linkTwo
-      });
-    };
-
-    var getDreamHouseLinkThree = function getDreamHouseLinkThree(linkThree) {
-      setAttributes({
-        dreamHouseLinkThree: linkThree
-      });
-    };
-
     var getDreamHouseLinkTitleOne = function getDreamHouseLinkTitleOne(linkTitleOne) {
       setAttributes({
         dreamHouseLinkTitleOne: linkTitleOne
@@ -428,47 +393,35 @@ registerBlockType('shepard-realtors/dream-houses', {
     };
 
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
-      title: 'Dream House Settings First',
+      title: 'Button Settings First',
       initialOpen: true
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "components-base-control"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "components-base-control__field"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(URLInputButton, {
-      placeholder: "Add link",
-      onChange: getDreamHouseLinkOne,
-      url: dreamHouseLinkOne
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText, {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
       placeholder: "Add link title",
       onChange: getDreamHouseLinkTitleOne,
       value: dreamHouseLinkTitleOne
     })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
-      title: 'Dream House Settings Second',
+      title: 'Button Settings Second',
       initialOpen: false
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "components-base-control"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "components-base-control__field"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(URLInputButton, {
-      placeholder: "Add link",
-      onChange: getDreamHouseLinkTwo,
-      url: dreamHouseLinkTwo
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText, {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
       placeholder: "Add link title",
       onChange: getDreamHouseLinkTitleTwo,
       value: dreamHouseLinkTitleTwo
     })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(PanelBody, {
-      title: 'Dream House Settings Third',
+      title: 'Button Settings Third',
       initialOpen: false
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "components-base-control"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "components-base-control__field"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(URLInputButton, {
-      placeholder: "Add link",
-      onChange: getDreamHouseLinkThree,
-      url: dreamHouseLinkThree
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText, {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(TextControl, {
       placeholder: "Add link title",
       onChange: getDreamHouseLinkTitleThree,
       value: dreamHouseLinkTitleThree
@@ -504,11 +457,8 @@ registerBlockType('shepard-realtors/dream-houses', {
       value: dreamHouseDescriptionOne
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__footer"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne",
-      target: "_self",
-      rel: "noopener",
-      href: dreamHouseLinkOne
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne"
     }, dreamHouseLinkTitleOne, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__wrap--inner"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -539,11 +489,8 @@ registerBlockType('shepard-realtors/dream-houses', {
       value: dreamHouseDescriptionTwo
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__footer"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo",
-      target: "_self",
-      rel: "noopener",
-      href: dreamHouseLinkTwo
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo"
     }, dreamHouseLinkTitleTwo, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__wrap--inner"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -574,11 +521,8 @@ registerBlockType('shepard-realtors/dream-houses', {
       value: dreamHouseDescriptionThree
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__footer"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree",
-      target: "_self",
-      rel: "noopener",
-      href: dreamHouseLinkThree
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree"
     }, dreamHouseLinkTitleThree, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null)))))));
   },
   save: function save(props) {
@@ -594,9 +538,6 @@ registerBlockType('shepard-realtors/dream-houses', {
         dreamHouseImageTwoAltText = _props$attributes2.dreamHouseImageTwoAltText,
         dreamHouseImageThree = _props$attributes2.dreamHouseImageThree,
         dreamHouseImageThreeAltText = _props$attributes2.dreamHouseImageThreeAltText,
-        dreamHouseLinkOne = _props$attributes2.dreamHouseLinkOne,
-        dreamHouseLinkTwo = _props$attributes2.dreamHouseLinkTwo,
-        dreamHouseLinkThree = _props$attributes2.dreamHouseLinkThree,
         dreamHouseLinkTitleOne = _props$attributes2.dreamHouseLinkTitleOne,
         dreamHouseLinkTitleTwo = _props$attributes2.dreamHouseLinkTitleTwo,
         dreamHouseLinkTitleThree = _props$attributes2.dreamHouseLinkTitleThree;
@@ -617,11 +558,8 @@ registerBlockType('shepard-realtors/dream-houses', {
       value: dreamHouseDescriptionOne
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__footer"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne",
-      target: "_self",
-      rel: "noopener",
-      href: dreamHouseLinkOne
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleOne"
     }, dreamHouseLinkTitleOne, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__wrap--inner"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -637,11 +575,8 @@ registerBlockType('shepard-realtors/dream-houses', {
       value: dreamHouseDescriptionTwo
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__footer"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo",
-      target: "_self",
-      rel: "noopener",
-      href: dreamHouseLinkTwo
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleTwo"
     }, dreamHouseLinkTitleTwo, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__wrap--inner"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -657,11 +592,8 @@ registerBlockType('shepard-realtors/dream-houses', {
       value: dreamHouseDescriptionThree
     }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
       className: "card__footer"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
-      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree",
-      target: "_self",
-      rel: "noopener",
-      href: dreamHouseLinkThree
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("button", {
+      className: "button button__outline button__icon button__outline--right-arrow card__button dreamHouseLinkTitleThree"
     }, dreamHouseLinkTitleThree, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null))))));
   }
 });
