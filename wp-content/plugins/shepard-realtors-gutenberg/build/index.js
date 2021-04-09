@@ -1038,6 +1038,150 @@ var PropertiesItem = function PropertiesItem(_ref) {
 
 /***/ }),
 
+/***/ "./src/components/search-form/index.js":
+/*!*********************************************!*\
+  !*** ./src/components/search-form/index.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var registerBlockType = wp.blocks.registerBlockType;
+registerBlockType('shepard-realtors/search-form', {
+  title: 'Search Form',
+  description: 'Shepard Realtors Search Form Block',
+  icon: 'search',
+  category: 'shepard-realtors',
+  edit: function edit() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+      className: "search-form-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__first-box-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__first-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      className: "input",
+      placeholder: "Search for a location..."
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__first-box-button-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      className: "button button__filled button__icon button__filled--search"
+    }, "Search", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("select", {
+      class: "input input__select"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bathrooms"
+    }, "Bathrooms"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bathrooms Two"
+    }, "Bathrooms Two"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bathrooms Three"
+    }, "Bathrooms Three"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("select", {
+      class: "input input__select"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bedrooms"
+    }, "Bedrooms"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bedrooms Two"
+    }, "Bedrooms Two"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bedrooms Three"
+    }, "Bedrooms Three"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      class: "input",
+      placeholder: "Min. Price"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      class: "input",
+      placeholder: "Max. Price"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      class: "button button__text button__text--grey"
+    }, "Advanced Search")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      class: "button button__text button__text--grey"
+    }, "Map Search")))));
+  },
+  save: function save() {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("section", {
+      className: "search-form-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__first-box-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__first-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      className: "input",
+      placeholder: "Search for a location..."
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__first-box-button-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      className: "button button__filled button__icon button__filled--search"
+    }, "Search", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("select", {
+      class: "input input__select"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bathrooms"
+    }, "Bathrooms"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bathrooms Two"
+    }, "Bathrooms Two"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bathrooms Three"
+    }, "Bathrooms Three"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("select", {
+      class: "input input__select"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bedrooms"
+    }, "Bedrooms"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bedrooms Two"
+    }, "Bedrooms Two"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: "Bedrooms Three"
+    }, "Bedrooms Three"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      class: "input",
+      placeholder: "Min. Price"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("input", {
+      type: "text",
+      class: "input",
+      placeholder: "Max. Price"
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      class: "button button__text button__text--grey"
+    }, "Advanced Search")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "search-form-container__second-box-input-container"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      class: "button button__text button__text--grey"
+    }, "Map Search")))));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/containers/PropertiesContainer/index.js":
 /*!*****************************************************!*\
   !*** ./src/containers/PropertiesContainer/index.js ***!
@@ -1249,8 +1393,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dream_houses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/dream-houses */ "./src/components/dream-houses/index.js");
 /* harmony import */ var _components_properties__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/properties */ "./src/components/properties/index.js");
 /* harmony import */ var _components_house_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/house-card */ "./src/components/house-card/index.js");
+/* harmony import */ var _components_search_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/search-form */ "./src/components/search-form/index.js");
 // Styles
  // Components
+
 
 
 

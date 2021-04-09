@@ -1,0 +1,24 @@
+.search-form-container {
+    margin-bottom: 40px;
+    &__first-box-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    &__first-box-input-container {
+        width: 75%;
+        padding-right: 30px;
+    }
+    &__first-box-button-container {
+        width: 25%;
+    }
+    &__second-box-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__second-box-input-container {
+        flex-basis: 210px;
+    }
+}

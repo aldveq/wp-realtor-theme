@@ -15,7 +15,7 @@
         width: 48px;
         height: 48px;
         background: {
-            image: url('images/icons/hamburguer.svg');
+            // image: url('images/icons/hamburguer.svg');
             repeat: no-repeat;
             size: 18px;
             position: center;
@@ -23,7 +23,7 @@
         &:hover {
             border: 2px solid $primary-color-pico-pink;
             background-color: $primary-color-pico-pink;
-            background-image: url('images/icons/hamburguer-white.svg');
+            // background-image: url('images/icons/hamburguer-white.svg');
         }
         &:active,
         &:visited,
@@ -31,10 +31,10 @@
             border: 2px solid $primary-color-pico-pink-pressed;
             outline: none; 
             background-color: $primary-color-pico-pink-pressed;
-            background-image: url('images/icons/hamburguer-white.svg');
+            // background-image: url('images/icons/hamburguer-white.svg');
         }
         &.disabled {
-            background-image: url('images/icons/hamburguer-disabled.svg');
+            // background-image: url('images/icons/hamburguer-disabled.svg');
             cursor: not-allowed;
             &:hover,
             &:active,
@@ -42,7 +42,7 @@
             &:focus {
                 border: 2px solid $support-color-silver;
                 background-color: $support-color-pure-white;
-                background-image: url('images/icons/hamburguer-disabled.svg');
+                // background-image: url('images/icons/hamburguer-disabled.svg');
             }
         }
     }
@@ -52,7 +52,7 @@
         border: none;
         background-color: transparent;
         background: {
-            image: url('images/icons/hamburguer-menu-icon.svg');
+            // image: url('images/icons/hamburguer-menu-icon.svg');
             repeat: no-repeat;
             size: 20px;
             position: center;
@@ -60,9 +60,9 @@
         @media screen and (min-width: 1366px) {
             display: none;
         }
-        &.show {
-            background-image: url('images/icons/close-menu-icon.svg');
-        }
+        // &.show {
+        //     background-image: url('images/icons/close-menu-icon.svg');
+        // }
         &:hover,
         &:active,
         &:focus {
@@ -132,22 +132,22 @@
             color: $support-color-pure-white;
         }
     }
-    &__outline--right-arrow {
-        & span {
-            width: 20px;
-            height: 14px;
-            background-image: url('images/icons/right-arrow.svg');
-        }
-        &:hover span,
-        &:active span,
-        &:visited span,
-        &:focus span {
-            background-image: url('images/icons/right-arrow-white.svg');
-        }
-        &.disabled span {
-            background-image: url('images/icons/right-arrow-disabled.svg');
-        }
-    }
+    // &__outline--right-arrow {
+    //     & span {
+    //         width: 20px;
+    //         height: 14px;
+    //         // background-image: url('images/icons/right-arrow.svg');
+    //     }
+    //     &:hover span,
+    //     &:active span,
+    //     &:visited span,
+    //     &:focus span {
+    //         // background-image: url('images/icons/right-arrow-white.svg');
+    //     }
+    //     &.disabled span {
+    //         // background-image: url('images/icons/right-arrow-disabled.svg');
+    //     }
+    // }
     &__filled {
         width: 100%;
         padding: 1em 6em;
@@ -183,10 +183,10 @@
         & span {
             width: 16px;
             height: 16px;
-            background-image: url('images/icons/search.svg');
+            // background-image: url('images/icons/search.svg');
         }
         &.disabled span {
-            background-image: url('images/icons/search-disabled.svg');
+            // background-image: url('images/icons/search-disabled.svg');
         }
     }  
     &__text {

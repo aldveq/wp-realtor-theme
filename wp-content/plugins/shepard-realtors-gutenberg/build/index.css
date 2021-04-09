@@ -262,5 +262,205 @@ button {
 .card-house__footer {
   padding: 0 4rem; }
 
+.search-form-container {
+  margin-bottom: 40px; }
+  .search-form-container__first-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; }
+  .search-form-container__first-box-input-container {
+    width: 75%;
+    padding-right: 30px; }
+  .search-form-container__first-box-button-container {
+    width: 25%; }
+  .search-form-container__second-box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .search-form-container__second-box-input-container {
+    flex-basis: 210px; }
+
+.button {
+  padding: 1em;
+  cursor: pointer;
+  border: 2px solid #E9E9EC;
+  background-color: transparent;
+  border-radius: 4px;
+  font-family: Raleway-SemiBold;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background ease-in-out 0.1s; }
+  .button__outline-hamburguer {
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: center; }
+    .button__outline-hamburguer:hover {
+      border: 2px solid #F44E65;
+      background-color: #F44E65; }
+    .button__outline-hamburguer:active, .button__outline-hamburguer:visited, .button__outline-hamburguer:focus {
+      border: 2px solid #EF3448;
+      outline: none;
+      background-color: #EF3448; }
+    .button__outline-hamburguer.disabled {
+      cursor: not-allowed; }
+      .button__outline-hamburguer.disabled:hover, .button__outline-hamburguer.disabled:active, .button__outline-hamburguer.disabled:visited, .button__outline-hamburguer.disabled:focus {
+        border: 2px solid #E9E9EC;
+        background-color: #FFFFFF; }
+  .button__hamburguer {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center; }
+    @media screen and (min-width: 1366px) {
+      .button__hamburguer {
+        display: none; } }
+    .button__hamburguer:hover, .button__hamburguer:active, .button__hamburguer:focus {
+      outline: none; }
+  .button__outline {
+    width: 100%;
+    padding: 1em 4em;
+    border: 2px solid #F44E65;
+    color: #F44E65 !important; }
+    .button__outline:active, .button__outline:visited, .button__outline:focus {
+      outline: none;
+      color: #FFFFFF !important;
+      border: 2px solid #EF3448;
+      background-color: #EF3448; }
+    .button__outline:hover {
+      border: 2px solid #F44E65;
+      background-color: #F44E65;
+      color: #FFFFFF !important; }
+    .button__outline.disabled {
+      cursor: not-allowed;
+      border: 2px solid #E9E9EC;
+      color: #E9E9EC;
+      background-color: #FFFFFF; }
+      .button__outline.disabled:hover, .button__outline.disabled:active, .button__outline.disabled:visited, .button__outline.disabled:focus {
+        background-color: #FFFFFF;
+        border: 2px solid #E9E9EC;
+        color: #E9E9EC; }
+  .button__outline--small {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.25px;
+    padding: 1em 2.5em;
+    min-width: 163px;
+    min-height: 36px;
+    max-height: 36px; }
+  .button__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .button__icon span {
+      display: block;
+      margin-left: 6px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center; }
+    .button__icon:hover span,
+    .button__icon:active span,
+    .button__icon:visited span,
+    .button__icon:focus span {
+      color: #FFFFFF; }
+  .button__filled {
+    width: 100%;
+    padding: 1em 6em;
+    color: #FFFFFF;
+    background-color: #F44E65;
+    border: 2px solid #F44E65;
+    min-height: 48px;
+    max-height: 48px; }
+    @media screen and (max-width: 576px) {
+      .button__filled {
+        min-width: 252px;
+        max-width: 252px; } }
+    .button__filled:hover {
+      background-color: #F96983;
+      border: 2px solid #F96983; }
+    .button__filled:active, .button__filled:visited, .button__filled:focus {
+      outline: none;
+      color: #FFFFFF;
+      border: 2px solid #EF3448;
+      background-color: #EF3448; }
+    .button__filled.disabled {
+      cursor: not-allowed;
+      border: 2px solid #E9E9EC;
+      background-color: #E9E9EC;
+      color: #AAADC3; }
+  .button__filled--search span {
+    width: 16px;
+    height: 16px; }
+  .button__text {
+    width: 100%;
+    padding: 1.3em 3em;
+    background-color: #FFFFFF;
+    border: 2px solid transparent;
+    color: #F44E65;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 1px; }
+    .button__text:hover {
+      background-color: #F96983;
+      color: #FFFFFF;
+      border: 2px solid #F96983; }
+    .button__text:active, .button__text:visited, .button__text:focus {
+      background-color: #EF3448;
+      border: 2px solid #EF3448;
+      color: #FFFFFF;
+      outline: none; }
+  .button__text--grey {
+    color: #AAADC3; }
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  max-height: 48px;
+  padding: 0.7em 4em 0.7em 1em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.25px;
+  color: #AAADC3;
+  border: 2px solid #E9E9EC;
+  border-radius: 4px; }
+  @media screen and (max-width: 576px) {
+    .input {
+      min-width: 252px;
+      max-width: 252px; } }
+  .input::-moz-placeholder {
+    color: #AAADC3; }
+  .input:-ms-input-placeholder {
+    color: #AAADC3; }
+  .input::placeholder {
+    color: #AAADC3; }
+  .input:active, .input:focus {
+    color: #AAADC3 !important;
+    border: 2px solid #AAADC3 !important;
+    outline: none; }
+  .input.error {
+    border: 2px solid #FF0000; }
+    .input.error:active, .input.error:focus {
+      border: 2px solid #FF0000 !important; }
+  .input__select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-repeat: no-repeat;
+    background-size: 12px 7px;
+    background-position: right .75rem center; }
+    .input__select option {
+      color: #210B2C;
+      background-color: #FFFFFF; }
+
 
 /*# sourceMappingURL=index.css.map*/
