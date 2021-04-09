@@ -785,6 +785,153 @@ registerBlockType('shepard-realtors/hero', {
 
 /***/ }),
 
+/***/ "./src/components/house-card/index.js":
+/*!********************************************!*\
+  !*** ./src/components/house-card/index.js ***!
+  \********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utilities */ "./src/utilities/index.js");
+
+var registerBlockType = wp.blocks.registerBlockType;
+var _wp$blockEditor = wp.blockEditor,
+    RichText = _wp$blockEditor.RichText,
+    MediaUpload = _wp$blockEditor.MediaUpload,
+    InspectorControls = _wp$blockEditor.InspectorControls;
+var _wp$components = wp.components,
+    Button = _wp$components.Button,
+    PanelBody = _wp$components.PanelBody,
+    TextControl = _wp$components.TextControl;
+
+registerBlockType('shepard-realtors/house-card', {
+  title: 'House Card',
+  description: 'Shepard Realtors House Card Block',
+  icon: 'admin-home',
+  category: 'shepard-realtors',
+  attributes: {
+    houseLocation: {
+      type: 'string',
+      source: 'html',
+      selector: 'p.card-house__location'
+    },
+    houseImage: {
+      type: 'string',
+      selector: '.card-house__image'
+    },
+    houseImageAltText: {
+      type: 'string',
+      selector: '.card-house__image'
+    },
+    buttonText: {
+      type: 'string',
+      default: 'View Listings'
+    }
+  },
+  edit: function edit(props) {
+    var _props$attributes = props.attributes,
+        houseLocation = _props$attributes.houseLocation,
+        houseImage = _props$attributes.houseImage,
+        houseImageAltText = _props$attributes.houseImageAltText,
+        buttonText = _props$attributes.buttonText,
+        setAttributes = props.setAttributes;
+
+    var getHouseLocation = function getHouseLocation(newHouseLocation) {
+      setAttributes({
+        houseLocation: newHouseLocation
+      });
+    };
+
+    var selectHouseImage = function selectHouseImage(newHouseImage) {
+      setAttributes({
+        houseImage: newHouseImage.sizes.full.url
+      });
+      setAttributes({
+        houseImageAltText: newHouseImage.alt
+      });
+    };
+
+    var getButtonText = function getButtonText(newButtonText) {
+      setAttributes({
+        buttonText: newButtonText
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      title: 'Button Settings',
+      initialOpen: true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "components-base-control__field"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+      onChange: getButtonText,
+      value: buttonText
+    }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card card-house"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(MediaUpload, {
+      onSelect: selectHouseImage,
+      type: "image",
+      render: function render(_ref) {
+        var open = _ref.open;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Button, {
+          className: "upload-button-image",
+          onClick: open,
+          icon: "format-image",
+          showTooltip: "true",
+          label: "Change image"
+        });
+      }
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(houseImage),
+      className: "card-house__image",
+      alt: houseImageAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      className: "card-house__location"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
+      placeholder: "Add location",
+      onChange: getHouseLocation,
+      value: houseLocation
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer card-house__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      className: "button button__outline button__outline--small"
+    }, buttonText))));
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        houseLocation = _props$attributes2.houseLocation,
+        houseImage = _props$attributes2.houseImage,
+        houseImageAltText = _props$attributes2.houseImageAltText,
+        buttonText = _props$attributes2.buttonText;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card card-house"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: Object(_utilities__WEBPACK_IMPORTED_MODULE_1__["setDefaultImage"])(houseImage),
+      className: "card-house__image",
+      alt: houseImageAltText
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__item card__flexible"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", {
+      className: "card-house__location"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
+      value: houseLocation
+    }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card__footer card-house__footer"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("button", {
+      className: "button button__outline button__outline--small"
+    }, buttonText)));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/components/properties/index.js":
 /*!********************************************!*\
   !*** ./src/components/properties/index.js ***!
@@ -1169,8 +1316,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/hero */ "./src/components/hero/index.js");
 /* harmony import */ var _components_dream_houses__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/dream-houses */ "./src/components/dream-houses/index.js");
 /* harmony import */ var _components_properties__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/properties */ "./src/components/properties/index.js");
+/* harmony import */ var _components_house_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/house-card */ "./src/components/house-card/index.js");
 // Styles
  // Components
+
 
 
 

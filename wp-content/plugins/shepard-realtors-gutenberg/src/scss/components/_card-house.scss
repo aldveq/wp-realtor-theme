@@ -1,0 +1,14 @@
+.card-house {
+    &__image {
+        border-radius: 8px;
+        min-height: 170px;
+        max-height: 170px;
+        object-fit: cover;
+    }
+    &__location {
+        margin: 8px 0 14px 0;
+    }
+    &__footer {
+        padding: 0 4rem;
+    }
+}

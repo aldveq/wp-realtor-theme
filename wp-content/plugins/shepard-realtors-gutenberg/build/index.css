@@ -249,5 +249,18 @@ button {
   letter-spacing: 0.1px;
   color: #210B2C; }
 
+.card-house__image {
+  border-radius: 8px;
+  min-height: 170px;
+  max-height: 170px;
+  -o-object-fit: cover;
+     object-fit: cover; }
+
+.card-house__location {
+  margin: 8px 0 14px 0; }
+
+.card-house__footer {
+  padding: 0 4rem; }
+
 
 /*# sourceMappingURL=index.css.map*/

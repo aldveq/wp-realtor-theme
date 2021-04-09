@@ -64,7 +64,8 @@ function shepard_realtors_blocks() {
     $shepard_realtors_blocks = [
         'shepard-realtors/brand',
         'shepard-realtors/hero',
-        'shepard-realtors/dream-houses'
+        'shepard-realtors/dream-houses',
+        'shepard-realtors/house-card'
     ];
 
     foreach($shepard_realtors_blocks as $sr_block) {
